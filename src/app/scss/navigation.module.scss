@@ -1,0 +1,28 @@
+@import "../variables/abstracts/colors";
+
+.flexbox {
+  display: flex;
+  width: 100%;
+  margin: 40px auto;
+  padding: 10px;
+  background: $dark-grey;
+  border-radius: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    margin-left: 10px;
+  }
+}
+
+.lightdarkmode {
+  padding: 15px;
+  background: $soft-grey;
+  border-radius: 10px;
+  margin-right: 10px;
+
+  .sunmoon {
+    position: relative;
+    top: 3px;
+  }
+}

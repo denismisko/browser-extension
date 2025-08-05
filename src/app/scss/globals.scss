@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "../variables/abstracts/colors";
+
+//GENERAL
+::selection {
+  background: $white;
+  color: $black;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $white;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+//BODY
+body {
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  background: $dark-gradient;
+  color: $white;
+}
+
+//HEADLINES
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+//CONTAINER
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+//
+li {
+  padding-left: 0;
+  list-style: none;
+}
+
+//
+ul {
+  display: flex;
+
+  li {
+    margin-left: 10px;
+    border-radius: 25px;
+    background: $soft-grey;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    &.active {
+      background-color: $red-400;
+      color: $black;
+    }
+  }
+}
+
+.headline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boxes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .box {
+    width: 471px;
+    max-width: 475px;
+    height: 200px;
+    max-height: 500px;
+    display: flex;
+    background: $soft-grey;
+    margin-top: 15px;
+    align-items: flex-start;
+    padding: 20px;
+    word-break: break-all;
+    border-radius: 20px;
+    position: relative;
+
+    h3{
+      margin-bottom: 7px;
+    }
+
+    img {
+      width: 50px;
+      margin-right: 15px;
+    }
+  }
+}
+.buttonFlex {
+  display: flex;
+}
+
+.remove {
+  position: absolute;
+  left: 13px;
+  bottom: 25px;
+  border: 1px solid $black;
+}
+
+.activeornot {
+  position: absolute;
+  right: 13px;
+  bottom: 25px;
+}
+
+.remove,
+.activeornot {
+  color: yellow;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.remove {
+  position: absolute;
+  left: 13px;
+  bottom: 20px;
+  border: 1px solid $black;
+  padding: 5px 15px;
+}
+
+.activeornot {
+  position: absolute;
+  right: 13px;
+  bottom: 25px;
+}
