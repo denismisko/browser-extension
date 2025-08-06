@@ -12,7 +12,7 @@ export default function Navigation({isDarkMode, setDarkMode}: NavigationProps) {
   return (
     <header className={styles.header}>
       <div className={styles.flexbox}>
-        <img src={"logo.svg"} alt="Logo" className={styles.logo} />
+        <img src={isDarkMode ? "logolight.svg" : "logodark.svg"} alt="Logo" className={styles.logo} />
         <div
           className={styles.lightdarkmode}
           onClick={darkModeSwitch}

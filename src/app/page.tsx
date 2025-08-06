@@ -3,6 +3,7 @@ import Navigation from "./navigation";
 import { useEffect, useState } from "react";
 import data from "../assets/data.json";
 import "./scss/globals.scss";
+import "./scss/page.scss";
 
 const filters = [
   { key: "all", label: "All" },
@@ -19,7 +20,7 @@ export default function Layout() {
     isActive === "all"
       ? items
       : items.filter((item) =>
-          isActive === "active" ? item.isActive : !item.isActive
+          isActive === "active" ? item.isActive : !item.isActive,
         );
 
   const removeItem = (name: string) => {
@@ -52,7 +53,7 @@ export default function Layout() {
         </div>
         <div className="boxes">
           {filteredData.length === 0 ? (
-            <p>No extensions :(</p>
+            <p className="zero-extensions">No extensions :(, add new!</p>
           ) : (
             filteredData.map((item) => (
               <div className="box" key={item.name}>
