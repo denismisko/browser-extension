@@ -1,6 +1,6 @@
 "use client";
 import Navigation from "./navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import data from "../assets/data.json";
 import "./scss/globals.scss";
 import "./scss/page.scss";
@@ -14,28 +14,29 @@ const filters = [
 export default function Layout() {
   const [isActive, setIsActive] = useState("all");
   const [items, setItems] = useState(data);
-  const [isDarkMode, setDarkMode] = useState(false);
 
   const filteredData =
     isActive === "all"
       ? items
       : items.filter((item) =>
-          isActive === "active" ? item.isActive : !item.isActive,
+          isActive === "active" ? item.isActive : !item.isActive
         );
 
   const removeItem = (name: string) => {
     setItems((prevItems) => prevItems.filter((item) => item.name !== name));
   };
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add("dark");
-    } else document.body.classList.remove("dark");
-  }, [isDarkMode]);
+  const toggleStatus = (name: string) => {
+    setItems((prevItems) =>
+      prevItems.map((item) =>
+        item.name === name ? { ...item, isActive: !item.isActive } : item
+      )
+    );
+  };
 
   return (
     <div className="container">
-      <Navigation isDarkMode={isDarkMode} setDarkMode={setDarkMode} />
+      <Navigation />
       <main>
         <div className="headline">
           <h1>Extensions list</h1>
@@ -53,7 +54,9 @@ export default function Layout() {
         </div>
         <div className="boxes">
           {filteredData.length === 0 ? (
-            <p className="zero-extensions">No extensions :(, add new!</p>
+            <p className="zero-extensions">
+              No extensions :( or no active, add new!
+            </p>
           ) : (
             filteredData.map((item) => (
               <div className="box" key={item.name}>
@@ -67,8 +70,21 @@ export default function Layout() {
                   >
                     Remove
                   </button>
-                  <div>
-                    <button className="activeornot">f</button>
+                  <div className="btns">
+                    <button
+                      className="activeornot"
+                      onClick={() => toggleStatus(item.name)}
+                    >
+                      <div
+                        className={
+                          item.isActive ? "switcher " : "switcher active"
+                        }
+                      >
+                        <div
+                          className={item.isActive ? "status" : "status active"}
+                        ></div>
+                      </div>
+                    </button>
                     <div></div>
                   </div>
                 </div>

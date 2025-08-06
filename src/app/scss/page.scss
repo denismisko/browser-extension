@@ -103,6 +103,36 @@ ul {
   left: 50%;
 }
 
+.switcher {
+  width: 45px;
+  height: 22px;
+  background: $red-400;
+  border-radius: 15px;
+  position: relative;
+
+  cursor: pointer;
+
+  .status {
+    width: 20px;
+    height: 19px;
+    background: $white;
+    position: absolute;
+    border-radius: 15px;
+    right:-8px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+.switcher.active {
+  background: grey;
+}
+
+.status.active {
+    left:12px;
+    transform: translate(-50%,-50%);
+}
+
 //dark mode
 .dark .box {
   background: $white;
@@ -114,6 +144,6 @@ ul {
   color: $black;
 }
 
-.dark li{
+.dark li {
   background: $white;
 }
