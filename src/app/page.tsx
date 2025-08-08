@@ -92,6 +92,10 @@ export default function Layout() {
             ))
           )}
         </div>
+        <div className="name">
+          Challenge by <a href="https://www.frontendmentor.io/home">FrontEnd Mentor</a>. Coded
+          by <a href="https://github.com/denismisko">Denis Miškolci</a>.
+        </div>
       </main>
     </div>
   );

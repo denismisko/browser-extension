@@ -139,6 +139,15 @@ ul {
   transform: translate(-50%, -50%);
 }
 
+.name{
+  text-align: center;
+  margin-top: 20px;
+
+  a{
+    color: $red-500;
+  }
+}
+
 //dark mode
 .dark .box {
   background: $white;
